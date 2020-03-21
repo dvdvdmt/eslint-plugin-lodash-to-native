@@ -6,8 +6,7 @@
   "repository": "https://github.com/dvdvdmt/eslint-plugin-lodash-to-native.git",
   "author": "Dmitriy Davydov",
   "scripts": {
-    "start": "npm run start:dev-server",
-    "test": "mocha ../tests --recursive"
+    "test": "mocha tests/**/*.js"
   },
   "keywords": [],
   "license": "ISC",

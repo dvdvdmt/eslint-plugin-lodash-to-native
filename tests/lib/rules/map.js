@@ -1,6 +1,6 @@
 /**
  * @fileoverview Replaces _.map() to native Array.map() whenever its possible.
- * @author 
+ * @author
  */
 "use strict";
 
@@ -27,7 +27,7 @@ ruleTester.run("map", rule, {
 
     invalid: [
         {
-            code: "return _.map(collection, fn);",
+            code: "_.map([1,2,3], fn)",
             errors: [{
                 message: "Fill me in.",
                 type: "Me too"
