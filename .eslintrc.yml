@@ -1,0 +1,14 @@
+plugins:
+  - prettier
+extends:
+  - plugin:prettier/recommended
+rules:
+  prefer-destructuring: off
+  curly: [error, all]
+  brace-style: [error, 1tbs, {allowSingleLine: false}]
+  no-multiple-empty-lines: [error, {max: 1, maxEOF: 0, maxBOF: 0}]
+  no-use-before-define: [error, {functions: false}]
+  no-unused-vars: [error, {argsIgnorePattern: '^_', varsIgnorePattern: '^_'}]
+  prefer-arrow-callback: off
+  object-curly-spacing: [error, never]
+  arrow-parens: [error, always]
