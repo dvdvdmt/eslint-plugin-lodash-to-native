@@ -16,15 +16,18 @@ ruleTester.run('map', rule, {
   invalid: [
     {
       code: '_.map(a,b)',
-      errors: [{messageId: 'replaceLodashMap'}],
+      errors: [{messageId: 'replaceWithCondition'}],
+      output: 'Array.isArray(a) ? a.map(b) : _.map(a, b)',
     },
     {
       code: '_.map([1,2,3], fn)',
-      errors: [{messageId: 'replaceWithoutCollectionTypeChecking'}],
+      errors: [{messageId: 'replaceDirectly'}],
+      output: '[1,2,3].map(fn)',
     },
     {
       code: 'var a = [1,2,3]; _.map(a, fn)',
-      errors: [{messageId: 'replaceWithoutCollectionTypeChecking'}],
+      errors: [{messageId: 'replaceDirectly'}],
+      output: 'var a = [1,2,3]; a.map(fn)',
     },
   ],
 });
