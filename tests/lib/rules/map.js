@@ -11,6 +11,7 @@ ruleTester.run('map', rule, {
     '[1,2,3].map(fn)',
     '_.map({a:1, b:2, c:3}, fn)',
     'var a = {}; _.map(a,b);',
+    'Array.isArray(someObject) ? someObject.map(mapFn) : _.map(someObject, mapFn);',
   ],
 
   invalid: [
