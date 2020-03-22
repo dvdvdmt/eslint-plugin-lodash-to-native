@@ -1,3 +1,17 @@
+# ШРИ 2020. Домашнее задание 4. "Плагин для ESLint"
+
+## Результат
+
+Был написан плагин `lodash-to-native` для ESLint. Он содержит правило `map` которое предлагает
+выполнить замену `_.map()` на метод `Array#map`, там где это возможно. Для правила были написаны
+тесты которые можно запустить командой `npm run test`.  
+
+Плагин устанавливается командой:  
+`npm install --save-dev https://github.com/dvdvdmt/eslint-plugin-lodash-to-native.git`
+
+Для активации плагина достаточно добавить строку `plugin:lodash-to-native/recommended` в массив
+`extends` файла `.eslintrc`.
+
 ## Описание задачи
 
 ### Разработка в IDE и терминале - написание правила для ESLint
@@ -6,6 +20,7 @@
 использоваться как с массивами, так и с объектами.
 
 Надо написать для ESLint плагин, в котором будет своё правило с фиксом.
+
 - [Документация по плагинам ESLint.](https://eslint.org/docs/developer-guide/working-with-plugins)
 - [Документация по правилам ESLint.](https://eslint.org/docs/developer-guide/working-with-rules)
 
@@ -46,14 +61,23 @@ return (проверка, что collection - это массив) ?
 присутствовать в коде, но проверять их на "правильность импортирования lodash" не нужно.
 
 Результат должен быть представлен в виде репозитория, название репозитория -
-`eslint-plugin-lodash-to-native`, полное название правила - `lodash-to-native/map`,
-сокращённое - `map`. Структура репозитория:
+`eslint-plugin-lodash-to-native`, полное название правила - `lodash-to-native/map`, сокращённое -
+`map`. Структура репозитория:
 
-`lib/ rules/ map.js <- файл правила tests/ lib/ rules <- тесты index.js <- список правил и
-конфигураций package.json <- описание npm пакета`
+```
+lib/
+    rules/
+        map.js <- файл правила
+tests/
+    lib/
+       rules <- тесты
+index.js <- список правил и конфигураций
+package.json <- описание npm пакета
+```
 
-При использовании в каком-либо проекте плагин/правило устанавливается через `npm install -S
-github.com/MyName/eslint-plugin-lodash-to-native.git` и подключается в `.eslintrc.js` так:
+При использовании в каком-либо проекте плагин/правило устанавливается через
+`npm install -S github.com/MyName/eslint-plugin-lodash-to-native.git` и подключается в
+`.eslintrc.js` так:
 
 ```js
   "plugins": [
