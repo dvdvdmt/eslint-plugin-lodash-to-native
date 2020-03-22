@@ -29,5 +29,19 @@ ruleTester.run('map', rule, {
       errors: [{messageId: 'replaceDirectly'}],
       output: 'var a = [1,2,3]; a.map(fn)',
     },
+    {
+      code: `(function() {
+  const collection = [1, 2, 3];
+  const mapFn = (el) => el * 2;
+  _.map(collection, mapFn);
+})();`,
+      errors: [{messageId: 'replaceDirectly'}],
+      output: `(function() {
+  const collection = [1, 2, 3];
+  const mapFn = (el) => el * 2;
+  collection.map(mapFn);
+})();`,
+      parserOptions: {ecmaVersion: 6},
+    },
   ],
 });
