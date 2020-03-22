@@ -1,6 +1,10 @@
+env:
+  node: true
 plugins:
   - prettier
 extends:
+  - eslint:recommended
+  - plugin:node/recommended
   - plugin:prettier/recommended
 rules:
   prefer-destructuring: off
