@@ -1,8 +1,8 @@
 {
   "name": "eslint-plugin-lodash-to-native",
   "version": "1.0.0",
-  "description": "SHRI 2020. Homework 4. Eslint plugin. Replaces _.map() to native Array.map() whenever its possible.",
-  "main": "../lib/index.js",
+  "description": "SHRI 2020. Homework 4. Eslint plugin. Replaces _.map() to native Array.map() whenever it is possible.",
+  "main": "lib/index.js",
   "repository": "https://github.com/dvdvdmt/eslint-plugin-lodash-to-native.git",
   "author": "Dmitriy Davydov",
   "scripts": {
